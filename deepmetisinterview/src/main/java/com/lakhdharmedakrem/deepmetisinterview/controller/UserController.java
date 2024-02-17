@@ -23,23 +23,6 @@ public class UserController {
         this.userService = userService;
     }
 
-//    @GetMapping("/best-selling-on-date")
-//    public ResponseEntity<List<Ingredient>> getBestSellingIngredientsOn(
-//            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime localDateTime) {
-//        return new ResponseEntity<>(userService.getBestSellingIngredientsOn(localDateTime), HttpStatus.OK);
-//    }
-//
-//    @GetMapping("/best-selling-on-date")
-//    public ResponseEntity<Integer> getNumberOfSandwichesSoldOn(
-//            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime localDateTime) {
-//        return new ResponseEntity<>(userService.getNumberOfSandwichesSoldOn(localDateTime), HttpStatus.OK);
-//    }
-//
-//
-//    @GetMapping("/best-selling-on-date")
-//    public ResponseEntity<Double> getProfitForDayOn(
-//            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime localDateTime) {
-//        return new ResponseEntity<>(userService.getProfitForDayOn(localDateTime), HttpStatus.OK);
-//    }
+
 
 }

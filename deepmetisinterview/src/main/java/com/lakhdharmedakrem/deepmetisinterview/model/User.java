@@ -1,6 +1,8 @@
 package com.lakhdharmedakrem.deepmetisinterview.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 import java.util.Date;
@@ -12,10 +14,13 @@ public class User {
     @Id
     private String username ;
     private String password;
+
+    @UpdateTimestamp
     @Column
     @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime creationDate ;
 
+    @CreationTimestamp
     @Column
     @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime updateDate ;

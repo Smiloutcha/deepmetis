@@ -23,11 +23,11 @@ public class OrderServiceImpl implements OrderService {
 
     @Transactional
     @Override
-    public void placeOrderForSandwiches(ClientOrderRequestDto orderRequestDto) {
+    public ClientOrder placeOrderForSandwiches(ClientOrderRequestDto orderRequestDto) {
         var order = orderMapper.mapOrderRequestDtoToOrder(orderRequestDto);
         var costOfCurrentOrder = computeOrderPrice(order);
         order.setTotalCost(costOfCurrentOrder);
-        orderRepository.save(order);
+        return orderRepository.save(order);
     }
 
     private double computeOrderPrice(ClientOrder order) {

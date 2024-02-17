@@ -1,6 +1,8 @@
 package com.lakhdharmedakrem.deepmetisinterview.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 import java.util.Collection;
@@ -15,7 +17,7 @@ public class ClientOrder {
     private Long orderId;
 
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY, mappedBy = "clientOrder")
     private Collection<SandwichOrder> sandwichesOrders;
 
     @Column(nullable = false)
@@ -23,10 +25,12 @@ public class ClientOrder {
 
     @Column
     @Temporal(TemporalType.TIMESTAMP)
+    @CreationTimestamp
     private LocalDateTime creationDate ;
 
     @Column
     @Temporal(TemporalType.TIMESTAMP)
+    @UpdateTimestamp
     private LocalDateTime updateDate ;
 
     @Column(nullable = false)

@@ -2,8 +2,9 @@ package com.lakhdharmedakrem.deepmetisinterview.service;
 
 
 import com.lakhdharmedakrem.deepmetisinterview.dto.ClientOrderRequestDto;
+import com.lakhdharmedakrem.deepmetisinterview.model.ClientOrder;
 
 public interface OrderService {
 
-    void placeOrderForSandwiches(ClientOrderRequestDto clientOrderRequestDto) ;
+    ClientOrder placeOrderForSandwiches(ClientOrderRequestDto clientOrderRequestDto) ;
 }

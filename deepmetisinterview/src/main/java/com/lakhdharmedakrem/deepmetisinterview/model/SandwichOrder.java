@@ -1,6 +1,8 @@
 package com.lakhdharmedakrem.deepmetisinterview.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 import java.util.Date;
@@ -20,14 +22,26 @@ public class SandwichOrder {
     @Column(nullable = false)
     private int quantity ;
 
+    @CreationTimestamp
     @Column
     @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime creationDate ;
 
+    @UpdateTimestamp
     @Column
     @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime updateDate ;
 
+    @ManyToOne
+    private ClientOrder clientOrder;
+
+    public ClientOrder getClientOrder() {
+        return clientOrder;
+    }
+
+    public void setClientOrder(ClientOrder clientOrder) {
+        this.clientOrder = clientOrder;
+    }
 
     public LocalDateTime getCreationDate() {
         return creationDate;

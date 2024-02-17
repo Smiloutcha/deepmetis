@@ -2,6 +2,8 @@ package com.lakhdharmedakrem.deepmetisinterview.model;
 
 import jakarta.persistence.*;
 import lombok.Getter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 import java.util.Date;
@@ -13,7 +15,7 @@ public class Ingredient {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ingredientId;
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private String name;
     @Column(nullable = false)
     private Double price ;
@@ -21,10 +23,12 @@ public class Ingredient {
     private Long availableQuantity ;
     @Column(nullable = false)
     private String ingredientType ;
+    @CreationTimestamp
     @Column
     @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime creationDate ;
 
+    @UpdateTimestamp
     @Column
     @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime updateDate ;

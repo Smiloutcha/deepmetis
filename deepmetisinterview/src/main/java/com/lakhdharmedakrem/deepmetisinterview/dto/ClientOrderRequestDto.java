@@ -9,11 +9,11 @@ public class ClientOrderRequestDto {
 
     private Collection<SandwichOrder> sandwichesOrders ;
 
-    public Collection<SandwichOrder> getSandwiches() {
+    public Collection<SandwichOrder> getSandwichesOrders() {
         return sandwichesOrders;
     }
 
-    public void setSandwiches(Collection<SandwichOrder> sandwiches) {
+    public void setSandwichesOrders(Collection<SandwichOrder> sandwiches) {
         this.sandwichesOrders = sandwiches;
     }
 }

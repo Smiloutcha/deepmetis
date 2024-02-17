@@ -1,6 +1,8 @@
 package com.lakhdharmedakrem.deepmetisinterview.model;
 
 import jakarta.persistence.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 import java.util.Collection;
@@ -17,10 +19,12 @@ public class Sandwich {
    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
    private Collection<Ingredient> ingredients ;
 
+   @CreationTimestamp
     @Column
     @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime creationDate ;
 
+   @UpdateTimestamp
     @Column
     @Temporal(TemporalType.TIMESTAMP)
     private LocalDateTime updateDate ;
